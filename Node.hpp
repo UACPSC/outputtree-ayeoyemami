@@ -7,6 +7,8 @@
 #ifndef INCLUDED_NODE_HPP
 #define INCLUDED_NODE_HPP
 
+class Visitor;
+
 // @pattern Composite @role Component
 class Node {
 public:
@@ -19,6 +21,9 @@ public:
 
     // current value
     virtual int value() const = 0;
+
+    // accept a visitor
+    virtual void accept(Visitor& visitor) = 0;
 
     // destructor
     virtual ~Node() = default;

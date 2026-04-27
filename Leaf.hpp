@@ -8,6 +8,7 @@
 #define INCLUDED_LEAF_HPP
 
 #include "Node.hpp"
+#include "Visitor.hpp"
 
 // @pattern Composite @role Leaf
 class Leaf : public Node {
@@ -24,6 +25,9 @@ public:
 
     // current value
     int value() const override;
+
+    // accept a visitor
+    void accept(Visitor& visitor) override;
 
 private:
     int nodeValue;

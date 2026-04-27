@@ -5,6 +5,7 @@
 */
 
 #include "Leaf.hpp"
+#include "Visitor.hpp"
 #include <iostream>
 
 // constructor
@@ -25,4 +26,10 @@ void Leaf::output() const {
 // current value
 int Leaf::value() const {
     return nodeValue;
+}
+
+// accept a visitor
+void Leaf::accept(Visitor& visitor) {
+
+    visitor.visit(*this);
 }

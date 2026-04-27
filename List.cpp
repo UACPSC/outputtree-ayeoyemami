@@ -5,6 +5,7 @@
 */
 
 #include "List.hpp"
+#include "Visitor.hpp"
 #include <iostream>
 
 // constructor
@@ -36,6 +37,12 @@ void List::output() const {
 int List::value() const {
 
     return 0;
+}
+
+// accept a visitor
+void List::accept(Visitor& visitor) {
+
+    visitor.visit(*this);
 }
 
 // destructor
